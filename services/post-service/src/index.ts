@@ -5,7 +5,7 @@ import { eq, sql } from 'drizzle-orm';
 import { publishEvent } from './events';
 
 const app = new Elysia()
-  .post('/api/posts/send/', async ({ body }) => {
+  .post('/api/posts/send', async ({ body }) => {
     const [post] = await db.insert(posts).values({
       userId: body.userId,
       username: body.username,
